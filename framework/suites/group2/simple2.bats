@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 load ../../helpers
-load ${sert_bats_workdir}/framework.bash
+load ${sert_bats_workdir}/sequential-helpers.bash
 
 @test "Group 2 | Simple 2 | Always pass1" {
 

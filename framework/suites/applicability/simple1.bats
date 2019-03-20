@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 test="Applicability"
 load ../../helpers
-load ${sert_bats_workdir}/framework.bash
+load ${sert_bats_workdir}/sequential-helpers.bash
 
 function create_environment() {
   # This is where we create environment
@@ -9,9 +9,18 @@ function create_environment() {
 }
 
 function applicable() {
+  if [[ ${TEST_NFS} == "true" ]]; then
+    return 0
+  else
+    return 1
+  fi
   # kubectl -n kube-system get pods | grep elasticsearch
   return 1
 }
+
+
+  $KUBECTL get
+
 
 @test "${test} | Simple 1 | Always pass1" {
 

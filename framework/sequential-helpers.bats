@@ -14,6 +14,10 @@ function setup() {
     # Prepare environment for test cases
     if type -t create_environment >/dev/null ; then
       if ! create_environment ; then
+        if [[ -z ${ON_SETUP_FAIL} ]]; then
+          # The default behavior will be to skip
+          export ON_SETUP_FAIL="skip"
+        fi
         # The setup failed.
         case "${ON_SETUP_FAIL}" in
           skip)

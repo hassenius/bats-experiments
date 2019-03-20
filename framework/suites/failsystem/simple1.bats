@@ -2,7 +2,7 @@
 
 export ON_SETUP_FAIL="faildd"
 load ../../helpers
-load ${sert_bats_workdir}/framework.bash
+load ${sert_bats_workdir}/sequential-helpers.bash
 
 function create_environment() {
   # This is where we create environment
